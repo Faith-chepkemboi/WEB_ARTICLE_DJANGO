@@ -250,12 +250,20 @@ li {
 
 a {
     text-decoration: none;
-    color: #4CAF50;
+    color: #4CAF50; /* Base color */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover */
+    color: #388E3C; /* Darker shade for hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
+
+a:active {
+    color: #2E7D32; /* Even darker shade when active */
+}
+
 
 .back-link {
     display: block;

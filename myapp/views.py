@@ -11,6 +11,14 @@ from django.http import JsonResponse
 
 from django.shortcuts import redirect
 
+from django.shortcuts import render, get_object_or_404
+from .models import Article
+
+def article_detail(request, article_id):
+    article = get_object_or_404(Article, id=article_id)
+    return render(request, 'myapp/article_detail.html', {'article': article})
+
+
 def home(request):
     return redirect('login')  
 
