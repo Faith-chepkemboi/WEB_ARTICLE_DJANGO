@@ -1,11 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Dashboard</title>
+    <script src="{% static 'js/main.js' %}"></script>
 </head>
 <body>
-    <script src="{% static 'js/main.js' %}"></script>
-
     <h1>Dashboard</h1>
     <a href="{% url 'create_article' %}">Create New Article</a>
     <h2>Your Articles</h2>
@@ -15,10 +15,12 @@
         <li>{{ article.title }} - <a href="#">{{ article.preview }}</a></li>
         {% endfor %}
     </ul>
+    
     <form method="get" action="{% url 'search_articles' %}">
         <input type="text" name="q" placeholder="Search articles...">
         <button type="submit">Search</button>
     </form>
+    
     <a href="{% url 'logout' %}">Logout</a>
 </body>
 </html>
