@@ -18,26 +18,16 @@
         <a href="{% url 'create_article' %}">Create New Article</a>
         
         <h2>Your Articles</h2>
-        <!-- <ul>
+        <ul>
             {% for article in articles %}
             <li>{{ article.title }} - <a href="#">{{ article.preview }}</a></li>
             {% empty %}
             <li>No articles found.</li>
             {% endfor %}
-        </ul> -->
-        <ul>
-            {% for article in articles %}
-            <li>
-                <a href="{% url 'article_detail' article.id %}">{{ article.title }}</a> - 
-                <a href="{% url 'article_detail' article.id %}">{{ article.preview }}</a>
-            </li>
-            {% empty %}
-            <li>No articles found.</li>
-            {% endfor %}
         </ul>
         
-
-        <a href="{% url 'logout' %}">Logout</a>
+    
+        <a class="logout" href="{% url 'logout' %}">Logout</a>
     </div>
 </body>
 </html>
